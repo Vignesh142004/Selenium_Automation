@@ -4,11 +4,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class WebDriverMethod {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		WebDriver driver=new ChromeDriver();
 		//1)get(url)
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Thread.sleep(5000);
 		driver.manage().window().maximize();
 		
 		//2) getTile()
@@ -27,7 +28,7 @@ public class WebDriverMethod {
 		String windowId=driver.getWindowHandle();
 		System.out.println("ID of current webpage: "+windowId);
 		
-		//driver.findElement(By.tagName("a")).click();
+		driver.findElement(By.tagName("a")).click();
 		//6)getWindowHandles()
 		Set<String> st =driver.getWindowHandles();
 		System.out.println("ID of multiple browser Windows :");
@@ -35,9 +36,6 @@ public class WebDriverMethod {
 		{
 			System.out.println(s);
 		}
-		
-		
-		
 		driver.quit();
 		
  	}
