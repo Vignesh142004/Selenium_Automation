@@ -27,6 +27,7 @@ public class MouseHoveractionDemo {
 		// whenever we perform mouse action we need to use build().perform()
 		act.moveToElement(desktop).moveToElement(mac).build().perform(); 
 		mac.click();
+		driver.quit();
 
 
 	}
