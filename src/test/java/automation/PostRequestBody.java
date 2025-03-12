@@ -1,7 +1,6 @@
 package APIAutomation;
 
 import static io.restassured.RestAssured.given;
-
 import static org.hamcrest.Matchers.equalTo;
 
 import java.io.File;
@@ -20,14 +19,14 @@ public class PostRequestBody
 	//@Test(priority=1)
 	void testUsingHashMap()
 	{
-		HashMap data=new HashMap();
+		HashMap<String,String> data=new HashMap<>();
 		data.put("name","Scott");
 		data.put("location","france");
 		data.put("phone","123456");
 		
-		String courseArr[]= {"C","C++"};
+		//String courseArr[]= {"C","C++"};
 		
-		data.put("course", courseArr);
+		//data.put("course", courseArr);
 		
 		given()
 		   .contentType("application/json")
